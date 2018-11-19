@@ -7,6 +7,7 @@ def nyc_pigeon_organizer(data)
           pig_stuff[element][k1] = [k2]
         else
           pig_stuff[element][k1] << k2
+        end
       end
     end
   end
