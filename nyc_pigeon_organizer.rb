@@ -4,7 +4,7 @@ def nyc_pigeon_organizer(data)
     v1.each do |k2,v2|
       v2.each do |element|
         if pig_stuff.has_key?(element) == false
-          pig_stuff[element][k1] = [k2]
+          pig_stuff[element] = {
         else
           pig_stuff[element][k1] << k2
         end
