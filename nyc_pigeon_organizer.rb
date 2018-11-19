@@ -1,8 +1,15 @@
-def nyc_pigeon_organizer(hash)
-  names = hash.values.map {|hash| hash.values}.flatten.uniq
-  skeleton = hash.keys.each_with_object(Hash.new {|k,v| k[v] = []}) {|key, hash| hash[key]}
-  template = names.each_with_object({}) {|name, organizer| organizer[name] = skeleton}
-  names.each do |name|
-    hash[:color].keys.each {|color| data[:color][color].include?(name)}
+def nyc_pigeon_organizer(data)
+  pig_stuff = {}
+  data.each do |k1,v1|
+    v1.each do |k2,v2|
+      v2.each do |element|
+        if pig_stuff[element].has_key?(k1) == false
+          pig_stuff[element][k1] = [k2]
+        else
+          pig_stuff[element][k1] << k2
+        end
+      end
+    end
   end
+  return pig_stuff
 end
